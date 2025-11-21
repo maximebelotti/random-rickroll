@@ -3,6 +3,12 @@ const github = require('@actions/github');
 
 async function run() {
   try {
+    const enabled = core.getInput('enabled');
+    if (enabled !== 'true') {
+      console.log("Rickroll désactivé par le workflow (enabled=false).");
+      return;  // On sort proprement sans exécuter le Rickroll
+    }
+    
     const percentage = core.getInput('percentage');
     var message;
     if(percentage > Math.floor(Math.random() * 100)){
