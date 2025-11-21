@@ -12,6 +12,10 @@ inputs:
     description: 'Comment message when not rickrolling (Optional : No comment would be made if not provided)'
     required: false
     default: ''
+  enabled:
+    description: 'Whether rickroll should be executed (true/false)'
+    required: false
+    default: 'true'
   GITHUB_TOKEN:
     description: 'Github token of the repository'
     required: false
